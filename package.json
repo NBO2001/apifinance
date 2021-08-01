@@ -1,0 +1,15 @@
+{
+  "name": "apifinance",
+  "version": "1.0.0",
+  "description": "Api for testes",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node App"
+  },
+  "author": "NBO2001",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
