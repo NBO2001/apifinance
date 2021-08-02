@@ -15,11 +15,11 @@ const Extrato = db.define('extrato', {
     val: {
         type: Sequelize.DOUBLE,
         allowNull: false,
-    },
+    },// 1 divida, 2 receita, 3 investimento
     type:{
         type: Sequelize.INTEGER,
         allowNull: false,
-    },
+    }, // 1 nao - paga, 2 paga 
     situation: {
         type: {
             type: Sequelize.INTEGER,

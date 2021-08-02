@@ -5,6 +5,7 @@ const cors = require('cors');
 const list = require('./routes/list');
 const addregister = require('./routes/addregister');
 const deleteReg = require('./routes/deletereg');
+const sumReg = require('./routes/sumRegisters');
 
 const app = express();
 
@@ -20,6 +21,8 @@ app.use('/api/v1/list', list);
 app.use('/api/v1/addregister', addregister);
 
 app.use('/api/v1/deletereg', deleteReg);
+
+app.use('/api/v1/sumreg', sumReg);
 
 app.use(function(req, res, next) {
     next(res.send('error'));

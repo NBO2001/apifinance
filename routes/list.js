@@ -26,10 +26,8 @@ router.get('/:month/:year', async (req, res, next) => {
     
     const data = new Date(`${yaerData}-${monthData}`);
 
-    const iniDay = new Date(data.getFullYear(), data.getMonth(), 1);
-    const endDay = new Date(data.getFullYear(), data.getMonth() + 1, 0);
-
-    console.log(endDay);
+    const iniDay = new Date(data.getFullYear(), data.getMonth(), 0);
+    const endDay = new Date(data.getFullYear(), data.getMonth() + 1, 1);
       
     await Extrato.findAll({
       order: [['id', 'DESC']],
