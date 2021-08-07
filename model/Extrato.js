@@ -11,24 +11,47 @@ const Extrato = db.define('extrato', {
     name: {
         type: Sequelize.STRING,
         allowNull: false,
+        validate: {
+            notEmpty: {
+                msg: "Filder Empty",
+                arg: true
+            },
+            len: {
+                msg: "Tem que ter no minimo 3 caracters",
+                args: [3,30]
+            }
+        }
     },
     val: {
         type: Sequelize.DOUBLE,
         allowNull: false,
-    },// 1 divida, 2 receita, 3 investimento
+        validate:{
+            isFloat:true,
+            notEmpty: true,
+        }
+    },//  1 receita, 2 investimento, 3 divida
     type:{
         type: Sequelize.INTEGER,
         allowNull: false,
-    }, // 1 nao - paga, 2 paga 
+    }, // 1 nao - paga, 2 paga, 3 recebido, 4 não recebido
     situation: {
-        type: {
-            type: Sequelize.INTEGER,
-            allowNull: true,
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate:{
+            notEmpty: {
+                msg: "Filder empty",
+                args: true
+            },
+            len: [1,10], 
         }
     },
     dataLan:{
         type: Sequelize.DATE,
         allowNull: false,
+        validate: {
+            notEmpty: true,
+            isDate: true
+        }
     }
     
 });

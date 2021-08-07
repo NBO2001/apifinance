@@ -6,6 +6,8 @@ const list = require('./routes/list');
 const addregister = require('./routes/addregister');
 const deleteReg = require('./routes/deletereg');
 const sumReg = require('./routes/sumRegisters');
+const alterRegisters = require('./routes/alterRegisters');
+const getSumYear = require('./routes/getSumYear');
 
 const app = express();
 
@@ -15,7 +17,6 @@ app.use(cors());
 
 const port = process.env.PORT || 8081;
 
-
 app.use('/api/v1/list', list);
 
 app.use('/api/v1/addregister', addregister);
@@ -23,6 +24,10 @@ app.use('/api/v1/addregister', addregister);
 app.use('/api/v1/deletereg', deleteReg);
 
 app.use('/api/v1/sumreg', sumReg);
+
+app.use('/api/v1/alter-register', alterRegisters);
+
+app.use('/api/v1/dash-year', getSumYear);
 
 app.use(function(req, res, next) {
     next(res.send('error'));

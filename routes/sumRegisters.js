@@ -20,14 +20,14 @@ router.get('/:month/:year', async (req, res, next) => {
     const totalYear = [
        {
         inMonth: {
-            desp: await SumType(1, iniDay, endDay).then((relt) =>  relt  ),
-            recp: await SumType(2, iniDay, endDay).then((relt) =>  relt ),
-            invs: await SumType(3, iniDay, endDay).then((relt) =>  relt  )
+            recp: await SumType(1, iniDay, endDay).then((relt) =>  relt  ),
+            invs: await SumType(2, iniDay, endDay).then((relt) =>  relt ),
+            desp: await SumType(3, iniDay, endDay).then((relt) =>  relt  )
         },
         inYear: {
-            desp: await SumType(1, firstDay, dateEnd).then((relt) =>  relt  ),
-            recp: await SumType(2, firstDay, dateEnd).then((relt) =>  relt ),
-            invs: await SumType(3, firstDay, dateEnd).then((relt) =>  relt  )
+            recp: await SumType(1, firstDay, dateEnd).then((relt) =>  relt  ),
+            invs: await SumType(2, firstDay, dateEnd).then((relt) =>  relt ),
+            desp: await SumType(3, firstDay, dateEnd).then((relt) =>  relt  )
         }
        }
     ];
