@@ -6,7 +6,6 @@ router.get('/:month/:year', async (req, res, next) => {
 
     const monthData = new Number(req.params.month);
     const yaerData = new Number(req.params.year);
-
     //Period do ano
     const firstDay = new Date(`${yaerData}`);
     const endDayF = new Date(`${yaerData+1}`);

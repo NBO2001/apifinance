@@ -8,6 +8,8 @@ const deleteReg = require('./routes/deletereg');
 const sumReg = require('./routes/sumRegisters');
 const alterRegisters = require('./routes/alterRegisters');
 const getSumYear = require('./routes/getSumYear');
+const getOnlyItem = require('./routes/getOnlyItem');
+const getPeriod = require('./routes/getPeriod');
 
 const app = express();
 
@@ -28,6 +30,10 @@ app.use('/api/v1/sumreg', sumReg);
 app.use('/api/v1/alter-register', alterRegisters);
 
 app.use('/api/v1/dash-year', getSumYear);
+
+app.use('/api/v1/sum-period', getPeriod);
+
+app.use('/api/v1/get-item', getOnlyItem);
 
 app.use(function(req, res, next) {
     next(res.send('error'));
