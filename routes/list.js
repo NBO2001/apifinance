@@ -25,10 +25,16 @@ router.get('/:month/:year', async (req, res, next) => {
     const yaerData = new Number(req.params.year);
     
     const data = new Date(`${yaerData}-${monthData}`);
-
-    const iniDay = new Date(data.getFullYear(), data.getMonth(), 0);
-    const endDay = new Date(data.getFullYear(), data.getMonth() + 1, 1);
-      
+    let iniDay;
+    let endDay;
+    if(parseInt(req.params.month) >= 10){
+      iniDay = new Date(data.getFullYear(), data.getMonth()+1, 0);
+      endDay = new Date(data.getFullYear(), data.getMonth() + 2, 1);
+    }else{
+      iniDay = new Date(data.getFullYear(), data.getMonth(), 0);
+      endDay = new Date(data.getFullYear(), data.getMonth()+ 1, 1);
+    }
+    
     await Extrato.findAll({
       order: [['id', 'DESC']],
       where: {
