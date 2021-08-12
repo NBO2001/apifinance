@@ -33,7 +33,7 @@ const Extrato = db.define('extrato', {
     type:{
         type: Sequelize.INTEGER,
         allowNull: false,
-    }, // 1 nao - paga, 2 paga, 3 recebido, 4 não recebido
+    },
     situation: {
         type: Sequelize.INTEGER,
         allowNull: false,
