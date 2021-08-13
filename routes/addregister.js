@@ -6,7 +6,7 @@ const Extrato = require('../model/Extrato');
 router.post('/', async (req, res, next) => {
     await Extrato.create(req.body)
     .then(function(){
-        return res.json({
+        return res.status(201).json({
             error: false,
             mensage: "Add register",
         });
