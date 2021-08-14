@@ -6,6 +6,7 @@ const SumType = async (types, iniDate, endDate) => {
     return await Extrato.sum('val', {
         where: {
           "type": types,
+          "situation": 1,
           "dataLan": {
             [Op.between]: [iniDate, endDate],
           }

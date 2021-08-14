@@ -28,6 +28,7 @@ router.get("/:year", (req, res, next) => {
           ],
           group:['type', Sequelize.fn('strftime', Sequelize.literal("'%m'"), Sequelize.col('dataLan'))],
           where: {
+               "situation":1,
                "dataLan": {
                     [Op.between]: [firstDay, dateEnd],
                }
